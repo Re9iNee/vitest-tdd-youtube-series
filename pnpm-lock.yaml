@@ -11,6 +11,9 @@ importers:
       '@prisma/client':
         specifier: ^6.3.1
         version: 6.3.1(prisma@6.3.1(typescript@5.7.3))(typescript@5.7.3)
+      vitest-mock-extended:
+        specifier: ^2.0.2
+        version: 2.0.2(typescript@5.7.3)(vitest@3.0.5(@types/node@22.13.4)(tsx@4.19.2))
     devDependencies:
       '@types/node':
         specifier: ^22.13.4
@@ -618,6 +621,14 @@ packages:
     resolution: {integrity: sha512-n1cw8k1k0x4pgA2+9XrOkFydTerNcJ1zWCO5Nn9scWHTD+5tp8dghT2x1uduQePZTZgd3Tupf+x9BxJjeJi77Q==}
     engines: {node: '>=14.0.0'}
 
+  ts-essentials@10.0.4:
+    resolution: {integrity: sha512-lwYdz28+S4nicm+jFi6V58LaAIpxzhg9rLdgNC1VsdP/xiFBseGhF1M/shwCk6zMmwahBZdXcl34LVHrEang3A==}
+    peerDependencies:
+      typescript: '>=4.5.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   tsx@4.19.2:
     resolution: {integrity: sha512-pOUl6Vo2LUq/bSa8S5q7b91cgNSjctn9ugq/+Mvow99qW6x/UZYwzxy/3NmqoT66eHYfCVvFvACC58UBPFf28g==}
     engines: {node: '>=18.0.0'}
@@ -675,6 +686,12 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  vitest-mock-extended@2.0.2:
+    resolution: {integrity: sha512-n3MBqVITKyclZ0n0y66hkT4UiiEYFQn9tteAnIxT0MPz1Z8nFcPUG3Cf0cZOyoPOj/cq6Ab1XFw2lM/qM5EDWQ==}
+    peerDependencies:
+      typescript: 3.x || 4.x || 5.x
+      vitest: '>=2.0.0'
 
   vitest@3.0.5:
     resolution: {integrity: sha512-4dof+HvqONw9bvsYxtkfUp2uHsTN9bV2CZIi1pWgoFpL1Lld8LA1ka9q/ONSsoScAKG7NVGf2stJTI7XRkXb2Q==}
@@ -1153,6 +1170,10 @@ snapshots:
 
   tinyspy@3.0.2: {}
 
+  ts-essentials@10.0.4(typescript@5.7.3):
+    optionalDependencies:
+      typescript: 5.7.3
+
   tsx@4.19.2:
     dependencies:
       esbuild: 0.23.1
@@ -1194,6 +1215,12 @@ snapshots:
       '@types/node': 22.13.4
       fsevents: 2.3.3
       tsx: 4.19.2
+
+  vitest-mock-extended@2.0.2(typescript@5.7.3)(vitest@3.0.5(@types/node@22.13.4)(tsx@4.19.2)):
+    dependencies:
+      ts-essentials: 10.0.4(typescript@5.7.3)
+      typescript: 5.7.3
+      vitest: 3.0.5(@types/node@22.13.4)(tsx@4.19.2)
 
   vitest@3.0.5(@types/node@22.13.4)(tsx@4.19.2):
     dependencies:
