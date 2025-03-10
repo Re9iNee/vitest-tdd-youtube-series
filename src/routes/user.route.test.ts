@@ -1,9 +1,9 @@
 import request from "supertest";
 import { describe, expect, it, vi } from "vitest";
-import app from "./app";
-import prisma from "./database/__mocks__/prisma";
+import app from "../app";
+import prisma from "../database/__mocks__/prisma";
 
-vi.mock("./database/prisma");
+vi.mock("../database/prisma");
 
 describe("/User", () => {
   it("should return a list of users", async () => {
