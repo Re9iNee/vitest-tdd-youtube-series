@@ -11,6 +11,9 @@ importers:
       '@prisma/client':
         specifier: ^6.3.1
         version: 6.3.1(prisma@6.3.1(typescript@5.7.3))(typescript@5.7.3)
+      body-parser:
+        specifier: ^1.20.3
+        version: 1.20.3
       express:
         specifier: ^4.21.2
         version: 4.21.2

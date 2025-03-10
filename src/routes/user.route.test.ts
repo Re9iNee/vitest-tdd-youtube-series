@@ -27,4 +27,42 @@ describe("/User", () => {
     expect(response.body).toEqual([expectedUser]);
     expect(prisma.user.findMany).toHaveBeenCalled();
   });
+
+  describe("post", () => {
+    it("should get email", async () => {
+      // Arrange
+      const email = undefined;
+      // Act
+      const response = await request(app).post("/user").send({ email });
+      // Assert
+      expect(response.status).toBe(404);
+      expect(response.body).toMatchObject({
+        message: "Error",
+        error: "email is required",
+      });
+    });
+
+    it("should make a new user", async () => {
+      const email = "example@something.com";
+      const prismaResponse = {
+        id: "1",
+        email,
+        name: null,
+        address: null,
+        posts: [],
+      };
+
+      prisma.user.create.mockResolvedValueOnce(prismaResponse);
+
+      // ACT
+      const response = await request(app).post("/user").send({ email });
+
+      // Assertions
+      expect(response.status).toBe(201);
+      expect(response.body).toMatchObject({
+        message: "OK",
+        data: prismaResponse,
+      });
+    });
+  });
 });
